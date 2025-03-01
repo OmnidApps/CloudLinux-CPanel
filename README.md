@@ -27,3 +27,45 @@
     * Firewall: [Firewall Configuration](./img/vm-creation-05.png) - Allow HTTP and HTTPS traffic.
 * Click "CREATE."
 * **Screenshot 4:** [VM List Page](./img/vm-list-post-creation.png) - VM instances page showing the newly created instance.
+
+## Phase 2: Connecting to the VM and Preparing the System
+
+### 1. Connect via SSH
+
+* Connect to the VM instance via SSH from the GCP Console.
+* **Screenshot 6:** [SSH Connection](./img/instance-ssh.png) - SSH connection to the VM instance.
+
+### 2. Update the System
+
+* [Instance SSH](./img/instance-setup-01.png) - Ensure properly connected to shell.
+* Update the system packages and reboot:
+    
+    ```bash
+    sudo dnf update -y
+    sudo reboot
+    ```
+* Reconnect to the VM via SSH after the reboot.
+
+### 3. Verify SELinux Enabled
+
+* Verify SELinux status:
+    ```bash
+    sestatus
+    ```
+* **Screenshot 7:** [SELinux Status](./img/selinux-status.png) - Output of `sestatus` showing SELinux is enabled.
+
+### 4. Set the Hostname
+
+* Set the hostname:
+    ```bash
+    sudo hostnamectl set-hostname your.domain.com
+    ```
+    (Replace `your.domain.com` with your actual domain.)
+* Edit `/etc/hosts`:
+    ```bash
+    sudo nano /etc/hosts
+    ```
+    * Add the line: `<your-server-internal-ip> your.domain.com your`
+    (Replace `<your-server-internal-ip>` with your server's internal IP.)
+    * Save and exit.
+* **Screenshot 8:** [Hosts File](./img/hosts-file.png) - Contents of `/etc/hosts` file.
