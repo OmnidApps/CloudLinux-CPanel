@@ -23,8 +23,8 @@
     * Name: `cpanel-cloudlinux-server`
     * Region and Zone: (Your selected region and zone)
     * Machine configuration: (Your selected machine type)
-    * Boot disk: [Boot Disk Configuration](./img/vm-creation-04.png) -  Enterprise Linux (Rocky Linux/AlmaLinux/etc.), Standard Persistent Disk, 50GB+
-    * Firewall: [Firewall Configuration](./img/vm-creation-05.png) - Allow HTTP and HTTPS traffic.
+    * Boot disk: [Boot Disk Configuration](./img/vm-creation-04.png) -  Enterprise Linux (Rocky Linux/AlmaLinux/etc.), Balanced Persistent Disk, 50GB+
+    * Firewall: [Firewall Configuration](./img/vm-creation-05.png) - Allow HTTP and HTTPS traffic. Allow IP Forwarding.
 * Click "CREATE."
 * ![VM List Page](./img/vm-list-post-creation.png) - VM instances page showing the newly created instance.
 
